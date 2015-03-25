@@ -41,7 +41,7 @@ def checkForToA(ida,volta):
     
     html = browser.response().get_data()
     #print html
-    with open('gits.txt', 'a') as file:
+    with open('gs.txt', 'a') as file:
         file.write(html)
 
 
@@ -50,14 +50,9 @@ def checkForToA(ida,volta):
         print("\tTest: OK") 
 
     pct_re = re.compile(r'class=\"price-secondary\"><span class=\"vt-currency \" data-value=\"\d+[.]\d+\"')
-    #pct_re = re.compile(', (.+)% done$')
-    #pct_re = re.compile(' (\d+.*)% done$')
+
     aa = set(re.findall(pct_re, html))
 
-    #m = re.search("", html)
-    #aa = ""
-    #if m:
-    #    aa = m.groups()
     
     print "Prices:\n"
     for x in aa:
@@ -69,8 +64,6 @@ def checkForToA(ida,volta):
             with open('best.txt', 'a+') as file:
                 file.write(str([str(x),ida, volta]) + "\n")
                 
-
-        #inemail.sendEmail("No TOA", *cred)
 
 dateida = datetime.strptime('06 12 2015', '%m %d %Y')
 d = datetime.strptime('02 01 2016', '%m %d %Y')
