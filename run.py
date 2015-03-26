@@ -40,7 +40,7 @@ def checkForToA(ida,volta):
     browser.open(urls)
     
     html = browser.response().get_data()
-    #print html
+
     with open('gs.txt', 'a') as file:
         file.write(html)
 
